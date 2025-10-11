@@ -105,7 +105,7 @@ BexBot es una plataforma SaaS premium para crear y configurar bots conversaciona
 
 ```bash
 # Clonar el repositorio
-git clone <repository-url>
+git clone https://github.com/MelvaMamani/BexBot.git
 
 # Navegar al directorio
 cd windsurf-project
@@ -126,6 +126,35 @@ npm run dev      # Inicia el servidor de desarrollo
 npm run build    # Construye la aplicación para producción
 npm run start    # Inicia el servidor de producción
 npm run lint     # Ejecuta el linter
+```
+
+### Despliegue en GitHub Pages
+
+#### Opción 1: Despliegue Automático con GitHub Actions (Recomendado)
+
+El proyecto incluye un workflow de GitHub Actions que despliega automáticamente en cada push a `main`.
+
+```bash
+# 1. Sube tus cambios a GitHub
+git add .
+git commit -m "Deploy to GitHub Pages"
+git push origin main
+
+# 2. Configura GitHub Pages:
+#    - Ve a Settings > Pages
+#    - En "Source" selecciona "GitHub Actions"
+#    - El workflow se ejecutará automáticamente
+#    - Tu sitio estará disponible en: https://melvamamani.github.io/BexBot/
+```
+
+#### Opción 2: Despliegue Manual
+
+```bash
+# 1. Construir la aplicación
+npm run build
+
+# 2. La carpeta 'out' contiene los archivos estáticos
+# 3. Sube la carpeta 'out' a la rama gh-pages o configura manualmente
 ```
 
 ## 📁 Estructura del Proyecto
