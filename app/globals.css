@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-borders-default;
+  }
+  
+  body {
+    @apply bg-background-primary text-text-primary;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1 {
+    @apply text-h1;
+  }
+
+  h2 {
+    @apply text-h2;
+  }
+
+  h3 {
+    @apply text-h3;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-background-card/80 backdrop-blur-xl border border-borders-default rounded-lg shadow-md;
+  }
+
+  .btn-primary {
+    @apply bg-accent-primary text-text-highlight px-4 py-2 rounded-md font-semibold hover:bg-accent-primary/90 transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply bg-background-secondary text-text-secondary px-4 py-2 rounded-md font-semibold hover:bg-background-hover transition-all duration-200;
+  }
+
+  .input-field {
+    @apply bg-background-secondary text-text-primary border border-borders-default rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-accent-primary/50 transition-all;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent-primary to-accent-secondary bg-clip-text text-transparent;
+  }
+}
+
+/* Animaciones personalizadas */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(16, 185, 129, 0.6);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
