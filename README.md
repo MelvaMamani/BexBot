@@ -17,6 +17,8 @@ BexBot es una plataforma SaaS premium para crear y configurar bots conversaciona
 - 🔗 **Integraciones**: Conecta con CRM, Analytics y más
 - 📚 **Templates**: Biblioteca de bots prediseñados por industria
 - 🤖 **IA Contextual**: Comprende intenciones complejas
+- 🔥 **Firebase Integration**: Registro de empresas con Firestore
+- 📝 **Formulario Completo**: Captura información de empresa, productos, servicios y excepciones
 
 ## 🎯 Pantallas Implementadas
 
@@ -48,11 +50,19 @@ BexBot es una plataforma SaaS premium para crear y configurar bots conversaciona
 
 ### 5. Biblioteca de Templates
 - Galería de bots prediseñados por industria
-- Filtros por categoría
-- Búsqueda en tiempo real
-- Ratings y estadísticas de uso
 
-### 6. Analytics y Reportes
+### 6. Registro de Empresa (NUEVO) 🔥
+- **Formulario Multi-paso (4 pasos)**:
+  - **Paso 1**: Información de la empresa (Nombre, RUC, Razón Social, Dirección, Teléfono, Email, Sitio Web, Sector, Descripción)
+  - **Paso 2**: Productos (Nombre, Descripción, Precio) - Agregar/Eliminar dinámicamente
+  - **Paso 3**: Servicios y Excepciones - Gestión completa de oferta
+  - **Paso 4**: Información Adicional (Horario, Métodos de Pago, Políticas de Devolución, Tiempo de Entrega, Cobertura)
+- **Integración con Firebase Firestore**: Almacenamiento seguro de datos
+- **Validación en tiempo real**: Campos obligatorios marcados
+- **Feedback visual**: Estados de carga, éxito y error
+- **Diseño responsive**: Funciona perfectamente en móvil y desktop
+
+### 7. Analytics y Reportes
 - KPIs principales con tendencias
 - Gráficos de conversaciones, canales y horarios
 - Heatmap de intenciones frecuentes
@@ -128,34 +138,6 @@ npm run start    # Inicia el servidor de producción
 npm run lint     # Ejecuta el linter
 ```
 
-### Despliegue en GitHub Pages
-
-#### Opción 1: Despliegue Automático con GitHub Actions (Recomendado)
-
-El proyecto incluye un workflow de GitHub Actions que despliega automáticamente en cada push a `main`.
-
-```bash
-# 1. Sube tus cambios a GitHub
-git add .
-git commit -m "Deploy to GitHub Pages"
-git push origin main
-
-# 2. Configura GitHub Pages:
-#    - Ve a Settings > Pages
-#    - En "Source" selecciona "GitHub Actions"
-#    - El workflow se ejecutará automáticamente
-#    - Tu sitio estará disponible en: https://melvamamani.github.io/BexBot/
-```
-
-#### Opción 2: Despliegue Manual
-
-```bash
-# 1. Construir la aplicación
-npm run build
-
-# 2. La carpeta 'out' contiene los archivos estáticos
-# 3. Sube la carpeta 'out' a la rama gh-pages o configura manualmente
-```
 
 ## 📁 Estructura del Proyecto
 

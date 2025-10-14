@@ -27,8 +27,8 @@ export default function LandingPage() {
             </div>
 
             <div className="hidden md:flex items-center space-x-4">
-              <Link href="/dashboard" className="btn-primary flex items-center space-x-2">
-                <span>Comenzar Gratis</span>
+              <Link href="/registro-empresa" className="btn-primary flex items-center space-x-2">
+                <span>Registrar Empresa</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -62,9 +62,12 @@ export default function LandingPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-16">
-              <Link href="/dashboard" className="btn-primary text-lg px-8 py-4 flex items-center space-x-2 group">
-                <span>Crear Mi Primer Bot</span>
+              <Link href="/registro-empresa" className="btn-primary text-lg px-8 py-4 flex items-center space-x-2 group">
+                <span>Registrar Mi Empresa</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link href="/dashboard" className="btn-secondary text-lg px-8 py-4 flex items-center space-x-2">
+                <span>Ver Demo</span>
               </Link>
             </div>
 
