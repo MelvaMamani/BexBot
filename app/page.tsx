@@ -273,9 +273,12 @@ export default function LandingPage() {
                     </li>
                   ))}
                 </ul>
-                <button className={plan.popular ? 'btn-primary w-full' : 'btn-secondary w-full'}>
+                <Link 
+                  href={plan.price === 'Custom' ? '/registro-empresa' : '/wizard'}
+                  className={plan.popular ? 'btn-primary w-full block text-center' : 'btn-secondary w-full block text-center'}
+                >
                   {plan.price === 'Custom' ? 'Contactar' : 'Comenzar'}
-                </button>
+                </Link>
               </div>
             ))}
           </div>
@@ -292,7 +295,7 @@ export default function LandingPage() {
             <p className="text-xl text-text-secondary mb-8">
               Únete a miles de empresas que transforman su negocio con BexBot
             </p>
-            <Link href="/dashboard" className="btn-primary text-lg px-10 py-4 inline-flex items-center space-x-2 group">
+            <Link href="/wizard" className="btn-primary text-lg px-10 py-4 inline-flex items-center space-x-2 group">
               <span>Crear Mi Bot Gratis</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>

@@ -198,10 +198,17 @@ export default function TemplatesPage() {
 
                 {/* Actions */}
                 <div className="flex items-center space-x-2">
-                  <button className="btn-primary flex-1 text-sm py-2">
+                  <Link 
+                    href="/wizard"
+                    className="btn-primary flex-1 text-sm py-2 text-center"
+                  >
                     Usar Template
-                  </button>
-                  <button className="btn-secondary px-3 py-2">
+                  </Link>
+                  <button 
+                    onClick={() => alert(`Vista Previa: ${template.name}\n\n${template.description}\n\nCaracterísticas:\n${template.features.join('\n')}\n\nRating: ${template.rating} ⭐\nUsos: ${template.uses.toLocaleString()}`)}
+                    className="btn-secondary px-3 py-2"
+                    title="Vista previa"
+                  >
                     <Eye className="w-4 h-4" />
                   </button>
                 </div>

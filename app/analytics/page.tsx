@@ -83,7 +83,12 @@ export default function AnalyticsPage() {
               </nav>
             </div>
 
-            <button className="btn-secondary flex items-center space-x-2">
+            <button 
+              onClick={() => {
+                alert('Exportando reporte en formato PDF...\n\nEl reporte incluye:\n- Métricas generales\n- Gráficos de tendencias\n- Análisis de canales\n- Intenciones principales\n- Recomendaciones')
+              }}
+              className="btn-secondary flex items-center space-x-2"
+            >
               <Download className="w-4 h-4" />
               <span>Exportar Reporte</span>
             </button>

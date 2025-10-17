@@ -288,13 +288,27 @@ export default function BotsPage() {
                 <Link href={`/bot/${bot.id}`} className="btn-primary flex-1 text-sm py-2 text-center">
                   Ver Detalles
                 </Link>
-                <button className="btn-secondary px-3 py-2">
+                <Link href={`/bot/${bot.id}`} className="btn-secondary px-3 py-2" title="Editar">
                   <Edit className="w-4 h-4" />
-                </button>
-                <button className="btn-secondary px-3 py-2">
+                </Link>
+                <button 
+                  onClick={() => {
+                    alert(`Bot "${bot.name}" copiado exitosamente!`)
+                  }}
+                  className="btn-secondary px-3 py-2"
+                  title="Duplicar"
+                >
                   <Copy className="w-4 h-4" />
                 </button>
-                <button className="btn-secondary px-3 py-2 hover:bg-accent-error/20 hover:text-accent-error">
+                <button 
+                  onClick={() => {
+                    if (confirm(`¿Estás seguro de eliminar el bot "${bot.name}"?`)) {
+                      alert(`Bot "${bot.name}" eliminado`)
+                    }
+                  }}
+                  className="btn-secondary px-3 py-2 hover:bg-accent-error/20 hover:text-accent-error"
+                  title="Eliminar"
+                >
                   <Trash2 className="w-4 h-4" />
                 </button>
               </div>

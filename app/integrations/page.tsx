@@ -347,19 +347,36 @@ export default function IntegrationsPage() {
               <div className="flex items-center space-x-2">
                 {integration.status === 'connected' ? (
                   <>
-                    <button className="btn-secondary flex-1 text-sm py-2">
+                    <button 
+                      onClick={() => alert(`Configurando ${integration.name}...\n\nAquí podrás ajustar:\n- Credenciales de API\n- Configuración de sincronización\n- Preferencias de datos`)}
+                      className="btn-secondary flex-1 text-sm py-2"
+                    >
                       Configurar
                     </button>
-                    <button className="btn-secondary px-3 py-2 hover:bg-accent-error/20 hover:text-accent-error">
+                    <button 
+                      onClick={() => {
+                        if (confirm(`¿Desconectar ${integration.name}?`)) {
+                          alert(`${integration.name} desconectado exitosamente`)
+                        }
+                      }}
+                      className="btn-secondary px-3 py-2 hover:bg-accent-error/20 hover:text-accent-error"
+                    >
                       Desconectar
                     </button>
                   </>
                 ) : (
                   <>
-                    <button className="btn-primary flex-1 text-sm py-2">
+                    <button 
+                      onClick={() => alert(`Conectando ${integration.name}...\n\nSerás redirigido a la página de autenticación.\n\nTiempo estimado de configuración: ${integration.setupTime}`)}
+                      className="btn-primary flex-1 text-sm py-2"
+                    >
                       Conectar
                     </button>
-                    <button className="btn-secondary px-3 py-2">
+                    <button 
+                      onClick={() => window.open(`https://www.google.com/search?q=${integration.name}+integration`, '_blank')}
+                      className="btn-secondary px-3 py-2"
+                      title="Más información"
+                    >
                       <ExternalLink className="w-4 h-4" />
                     </button>
                   </>
